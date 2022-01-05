@@ -1,0 +1,132 @@
+/*
+Project ONE
+Your task is to write a program that reads records, prints the records, and computes some statistics. The program starts by asking for a threshold BMI. Only records with a BMI greater than or equal to the threshold will be printed. Each record consists of a person's name (which might contain spaces), weight in kilograms, height in centimeters (not meters), and the person's sex ('M' or 'F'). Let the user enter the sex in uppercase or lowercase.
+Print each person's BMI after reading that person's record.
+After collecting information for everyone, print two tables of the information.
+One table is for men and the other is for women.
+Mark records for which the BMI meets or exceeds the threshold with an asterisk after the BMI.
+After each table, print the mean (average) and median BMI. (Median is the value such that half the BMI values are less than the median and half are greater than the median. If the user enters an even number of records, take the average of the two values in the middle.) Compute individual BMI values as integers. Compute the mean and median BMIs as floating point numbers, and print the mean with one place after the decimal point.
+Body-mass index is defined as weight in kg/(height in m)2, converted to a unitless number.
+
+Functions
+int 
+compute_bmi (int height, int weight)
+ 
+Compute the body-mass index (BMI). The height is in centimeters, so the computed value is off by 10,000. Integer division truncates, but we want to round off to nearest, so add 0.5 and then truncate by casting to an integer.
+ 
+void 
+skip_line ()
+ 
+Skip the rest of the input line.
+ 
+bool 
+get_record (std::vector< std::string > &names, std::vector< int > &heights, std::vector< int > &weights, std::vector< char > &sexes)
+ 
+Get a single person's record. Store the name, height, weight, and sex in the supplied vectors.
+ 
+void 
+print_table (char sex, std::vector< int > const &heights, std::vector< int > const &weights, std::vector< int > const &bmis, std::vector< char > const &sexes, std::vector< std::string > const &names, int threshold)
+ 
+Print a table. Print a table of height, weight, sex, BMI, and name. Print only records for which sex matches sex. At the end of each table, print the mean and median BMI.
+ 
+int 
+main ()
+ 
+Main program to compute BMI.
+ 
+
+Detailed Description
+Compute body-mass index.
+Function Documentation
+
+int compute_bmi
+(
+int 
+height,
+
+
+int 
+weight 
+
+)
+
+
+Compute the body-mass index (BMI). The height is in centimeters, so the computed value is off by 10,000. Integer division truncates, but we want to round off to nearest, so add 0.5 and then truncate by casting to an integer.
+Parameters
+height
+The person's height in centimeters.
+weight
+The person's weight in kilograms.
+Returns
+the person's BMI, rounded to an integer
+
+bool get_record
+(
+std::vector< std::string > & names,
+std::vector< int > & heights,
+std::vector< int > & weights,
+std::vector< char > & sexes 
+)
+Get a single person's record. Store the name, height, weight, and sex in the supplied vectors.
+Parameters
+names
+array of persons' full names
+heights
+array of height in centimeters
+weights
+array of weight in kilograms
+sexes
+array of persons' sex: 'M' means male and 'F' means female
+Returns
+true to continue reading records or false to stop
+
+void print_table
+(
+char 
+sex,
+
+
+std::vector< int > const & 
+heights,
+
+
+std::vector< int > const & 
+weights,
+
+
+std::vector< int > const & 
+bmis,
+
+
+std::vector< char > const & 
+sexes,
+
+
+std::vector< std::string > const & 
+names,
+
+
+int 
+threshold 
+
+)
+
+
+Print a table. Print a table of height, weight, sex, BMI, and name. Print only records for which sex matches sex. At the end of each table, print the mean and median BMI.
+Parameters
+sex
+the sex to match
+heights
+the array of heights
+weights
+the array of weights
+bmis
+the array of BMIs
+sexes
+the array of sexes
+names
+the array of names
+threshold
+print only elements for which BMI > this
+*/
+#include <iostream>

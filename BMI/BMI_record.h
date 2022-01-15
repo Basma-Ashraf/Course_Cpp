@@ -1,14 +1,19 @@
-#ifndef BMI_BSW_H
-#define BMI_BSW_H
+/*
+ * BMI_record.h
+ *
+ *  Created on: Jan 14, 2022
+ *      Author: basma
+ */
+
+#ifndef BMI_RECORD_H_
+#define BMI_RECORD_H_
+
+
 
 #include <iostream>
 #include <vector>
 #include <string>
 #include <cmath>
-
-void skip_line ();
-
-int compute_bmi (int height, int weight);
 
 
 bool get_record (
@@ -24,4 +29,4 @@ void print_table (
     int threshold);
 
 
-#endif
+#endif /* BMI_RECORD_H_ */
